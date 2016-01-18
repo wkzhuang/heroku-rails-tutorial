@@ -11,7 +11,18 @@ RSpec.describe Course, :type => :model do
 	       describe "public instance methods" do
 	           context "responds to its methods" do
 		       	   it { expect(course_instance).to respond_to(:course_num) }
-			   
 	           end
 	       end
 end
+
+RSpec.describe Course, :type => :model do
+	       let(:course_instance) { Course.create(dept: "CMPSC", num: "24", desc: "Intro OOD") }
+	       describe ".course_num" do
+	          context "given Dept and Num" do
+		    it "returns the correct string" do
+		      expect(course_instance.course_num()).to eql("CMPSC 24")
+		    end
+		  end
+	       end
+end
+		  

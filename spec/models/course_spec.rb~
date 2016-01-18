@@ -14,3 +14,15 @@ RSpec.describe Course, :type => :model do
 	           end
 	       end
 end
+
+RSpec.describe Course, :type => :model do
+	       let(:course_instance) { Course.create(dept: "CMPSC", num: "24", desc: "Intro OOD") }
+	       describe ".course_num" do
+	          context "given Dept and Num" do
+		    it "returns the correct string" do
+		      expect(Course.course_num()).to eql("CMPSC 24")
+		    end
+		  end
+	       end
+end
+		  
