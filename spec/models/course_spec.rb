@@ -11,6 +11,7 @@ RSpec.describe Course, :type => :model do
 	       describe "public instance methods" do
 	           context "responds to its methods" do
 		       	   it { expect(course_instance).to respond_to(:course_num) }
+			   
 	           end
 	       end
 end
